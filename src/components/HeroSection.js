@@ -43,7 +43,6 @@ const StyledTextField = styled(TextField)({
 });
 
 var inputStr;
-var dataOb;
 
 
 
@@ -58,8 +57,8 @@ function HeroSection() {
           <StyledTextField
             
             onChange={(event) => {
-              inputStr = (parseInt(event.target.value));
-            }}
+              localStorage.setItem("input string", inputStr = (parseInt(event.target.value)));
+               }}
             InputLabelProps={{style : {color : 'white'}}}
             InputProps={{style : {color : 'white'}}}
             FormHelperTextProps = {{style : {color : 'white'}}}
@@ -72,10 +71,8 @@ function HeroSection() {
           <Button 
            onClick={() => {
             if (!(getIn(inputStr))){
-              alert("error not in database");
+              alert("Error: This SSN is not found!");
             }else{
-              dataOb = getIn(inputStr)
-              alert("In database")
               window.location.href = "/datapage"
             }
           }}

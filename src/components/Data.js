@@ -1,3 +1,4 @@
+
 const dmv = {
     // Social Security is the numbered value
     123456789: {
@@ -24,3 +25,26 @@ const dmv = {
         return false
     }
     }
+  export function getName(inputStr) {
+    if (inputStr in dmv){
+      return dmv[inputStr][0]
+  } else {
+      return false
+  }
+}
+
+  export function getDl(inputStr) {
+    if (inputStr in dmv){
+      return dmv[inputStr][1]
+  } else {
+      return false
+  }
+}
+
+  export function getDOB(inputStr) {
+    if (inputStr in dmv){
+      return dmv[inputStr][2]
+  } else {
+      return false
+  }
+}
