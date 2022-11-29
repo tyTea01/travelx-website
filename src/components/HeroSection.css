@@ -18,9 +18,7 @@ video {
   object-fit: contain;
 }
 
-.hero-container > h1 {
-  color: #fff;
-  font-size: 50px;
+.ssn-submit {
   margin-top: -300px;
 }
 

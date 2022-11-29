@@ -9,12 +9,13 @@ import { Button, TextField } from '@mui/material';
 
 
 function SSN() {
-
+    
     return (
 
       <div className='ssn-submit'>
         <header>
           <TextField
+            sx={{ input: { color: 'white' } }}
             label="Social Security"
             helperText="Please enter your SSN"
             id="outlined-size-small"
