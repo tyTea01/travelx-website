@@ -4,7 +4,8 @@ import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/pages/Home';
 import About from './components/pages/About';
-import HeroSection from './components/HeroSection';
+import DataPage from './components/pages/DataPage';
+
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path='/' exact element = {<Home/>} />
           <Route path='/About' element = {<About/>} /> 
+          <Route path='/DataPage' element = {<DataPage/>} /> 
         </Routes>
       </Router>
       
