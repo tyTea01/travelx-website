@@ -2,7 +2,7 @@
 import React from 'react';
 import '../App.css';
 import './HeroSection.css';
-import { Button, TextField } from '@mui/material';
+import { Grid, Button, TextField, Typography } from '@mui/material';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import { outlinedInputClasses } from "@mui/material/OutlinedInput";
 import { inputLabelClasses } from "@mui/material/InputLabel";
@@ -51,9 +51,14 @@ function HeroSection() {
     
     <div className='hero-container'>
       <video src='/videos/video-3.mp4' autoPlay loop muted />
-
+      
       <div className='ssn-submit'>
         <header>
+          <Grid container direction="column" alignItems="center" justify="center">
+          <Typography color="white" fullWidth style = {{marginBottom: "1em"}} >
+            Please enter your SSN!
+          </Typography>
+
           <StyledTextField
             
             onChange={(event) => {
@@ -63,10 +68,10 @@ function HeroSection() {
             InputProps={{style : {color : 'white'}}}
             FormHelperTextProps = {{style : {color : 'white'}}}
             label="Social Security"
-            helperText="Please enter your SSN"
             id="outlined-size-normal"
             size='normal'
             placeholder='xxx-xx-xxxx'
+            fullWidth style = {{marginBottom: "1em"}}
           />
           <Button 
            onClick={() => {
@@ -82,6 +87,8 @@ function HeroSection() {
           endIcon={<KeyboardArrowRightIcon/>}>
             Submit
             </Button>
+
+          </Grid>
 
 
         </header>

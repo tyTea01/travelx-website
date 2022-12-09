@@ -5,6 +5,23 @@ import './Footer.css';
 function Footer() {
   return (
     <div className='footer-container'>
+
+        <section className="footer-ntas">
+        <iframe 
+            src="https://www.dhs.gov/ntas/" 
+            name="National Terrorism Advisory System" 
+            title="National Terrorism Advisory System" 
+            width="170" 
+            height="180" 
+            scrolling="no" 
+            frameborder="0" 
+            seamless border="0"
+          
+            >
+
+            </iframe>
+        </section>
+
         <div className='footer-links'>
             <div className='footer-link-wrappers'>
                 <div className='footer-link-items'>
@@ -42,6 +59,23 @@ function Footer() {
                     <Link to='/'>USA</Link>
                 </div>
             </div>
+
+            {/* <div className="footer-link-wrappers">
+            <iframe 
+            src="https://www.dhs.gov/ntas/" 
+            name="National Terrorism Advisory System" 
+            title="National Terrorism Advisory System" 
+            width="170" 
+            height="180" 
+            scrolling="no" 
+            frameborder="0" 
+            seamless border="0"
+          
+            >
+
+            </iframe>
+            </div> */}
+
         </div>
         <section className="social-media">
             <div className="social-media-wrap">
