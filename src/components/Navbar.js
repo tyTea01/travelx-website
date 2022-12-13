@@ -53,17 +53,16 @@ function Navbar() {
               </Link>
             </li>
 
-            <li className='nav-item'>
+            {user?.displayName ?<li className='nav-item'>
               <Link to='/SSNBox' className='nav-links' onClick={closeMobileMenu}>
                 SSN Search
               </Link>
-            </li>
-
-            <li className='nav-item'>
+            </li>: <></>}
+            {user?.displayName ?<li className='nav-item'>
               <Link to='/AddPage' className='nav-links' onClick={closeMobileMenu}>
-                Add/Edit 
+                Add/ Edit
               </Link>
-            </li>
+            </li>: <></>}
 
             <li>
               {user?.displayName ? <Link className='nav-links-mobile' onClick ={handleSignOut}>Logout</Link>:<Link to='/SignIn' className='nav-links-mobile' onClick={closeMobileMenu}>Sign In</Link>}

@@ -252,6 +252,8 @@ function AddPerson() {
 		<br></br>
 		<br></br>
 		<br></br>
+		<br></br>
+		<br></br>
 		<div className="department-dropdown">
 		
 			<FormControl margin="normal" fullWidth sx={{ m: 1, minWidth: 120}}>
@@ -470,18 +472,19 @@ function AddPerson() {
            onClick={() => {
 			// success function: add
 			var obj = {};
-			obj[values.ssnmask] = {};
+			var parsedSsn = values.ssnmask.replace(/\-/g, "");
+			obj[parsedSsn] = {};
 			var incomingData;
 			if (department==1) {
 				incomingData = { }
-				Object.assign(obj[values.ssnmask], {fullName: values.namemask, driversLicense: values.licensemask, dateOfBirth: values.dobmask, passportNumber: values.passportmask, passportExpiration: values.expmask} )
+				Object.assign(obj[parsedSsn], {fullName: values.namemask, dateOfBirth: values.dobmask} )
 			} else if (department==2) {
-				Object.assign(obj[values.ssnmask], {fullName: values.namemask, driversLicense: values.licensemask, dateOfBirth: values.dobmask, passportNumber: values.passportmask, passportExpiration: values.expmask} )
+				Object.assign(obj[parsedSsn], {fullName: values.namemask, dateOfBirth: values.dobmask, passportNumber: values.passportmask, passportExpiration: values.expmask} )
 			} else if (department==3) {
-				Object.assign(obj[values.ssnmask], {fullName: values.namemask, driversLicense: values.licensemask, dateOfBirth: values.dobmask, passportNumber: values.passportmask, passportExpiration: values.expmask} )
+				Object.assign(obj[parsedSsn], {fullName: values.namemask, driversLicense: values.licensemask, dateOfBirth: values.dobmask} )
 			} else {
 			}
-			console.log(obj[values.ssnmask])
+			console.log(obj)
           }}
           type="submit" 
           variant="contained" 
