@@ -2,7 +2,7 @@ import React from 'react';
 import '../../App.css';
 //import SSN from '../SSN';
 import HeroSection from '../HeroSection';
-import Footer from '../Footer';
+
 
 
 
