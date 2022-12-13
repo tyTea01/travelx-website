@@ -10,6 +10,7 @@ import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Collapse from '@mui/material/Collapse';
 import CloseIcon from '@mui/icons-material/Close';
+import { Paper } from '@mui/material';
 import './Cards.css';
 
 
@@ -35,13 +36,13 @@ function Cards() {
               <CloseIcon fontSize="inherit" />
             </IconButton>
           }
-          sx={{ mb: 2 }}
+       
         >
           Matches all current databases
         </Alert>
       </Collapse>
       </Box>
- <Grid
+      <Grid  className="card"
   container
   spacing={0}
   direction="row"
@@ -50,6 +51,9 @@ function Cards() {
  >
   <Grid item xs={3}>
   <Card sx={{ maxWidth: 300 }}>
+      <Paper>
+        <h3>Department of State</h3>
+      </Paper>
       <CardMedia
         component="img"
         height="300"
@@ -77,11 +81,10 @@ function Cards() {
   
   <Grid item xs={3}>
   <Card sx={{ maxWidth: 300 }}>
-      <CardMedia
-        component="img"
-        height="300"
-        image="/images/avatar-M.png"
-      />
+      <Paper>
+        <h3>Social Security</h3>
+      </Paper>  
+      <br></br>    
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {personObj.fullName}
@@ -104,6 +107,9 @@ function Cards() {
 
   <Grid item xs={3}>
   <Card sx={{ maxWidth: 300 }}>
+      <Paper>
+        <h3>Department of Motor Vehicles</h3>
+      </Paper>
       <CardMedia
         component="img"
         height="300"
