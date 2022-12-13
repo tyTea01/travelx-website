@@ -6,6 +6,7 @@ import Home from './components/pages/Home';
 import DataPage from './components/pages/DataPage';
 import SignIn from './components/pages/SignIn';
 import SSNBox from './components/pages/SSNBox';
+import AddPage from './components/pages/AddPage';
 import Footer from './components/Footer';
 
 
@@ -23,6 +24,7 @@ function App() {
           <Route path='/DataPage' element = {<DataPage/>} />
           <Route path='/SignIn' element = {<SignIn/>} />
           <Route path='/SSNBox' element = {<SSNBox/>} />
+          <Route path='/AddPage' element = {<AddPage/>} />
 
         </Routes>
         <Footer/>
