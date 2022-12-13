@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
+import { UserAuth } from '../components/context/AuthContext';
 import './Navbar.css';
 
 function Navbar() {
@@ -23,7 +24,16 @@ function Navbar() {
   }, []);
 
   window.addEventListener('resize', showButton);
+  
+  const { user, logOut } = UserAuth();
 
+  const handleSignOut = async () => {
+    try {
+      await logOut()
+    } catch (error) {
+      console.log(error)
+    }
+  }
   return (
     <>
       <nav className='navbar'>
@@ -43,16 +53,23 @@ function Navbar() {
               </Link>
             </li>
 
-            <li>
-              <Link
-                to='/SignIn'
-                className='nav-links-mobile'
-                onClick={closeMobileMenu}>
-                Sign In
+            <li className='nav-item'>
+              <Link to='/SSNBox' className='nav-links' onClick={closeMobileMenu}>
+                SSN Search
               </Link>
             </li>
+
+            <li className='nav-item'>
+              <Link to='/AddPage' className='nav-links' onClick={closeMobileMenu}>
+                Add/Edit 
+              </Link>
+            </li>
+
+            <li>
+              {user?.displayName ? <Link className='nav-links-mobile' onClick ={handleSignOut}>Logout</Link>:<Link to='/SignIn' className='nav-links-mobile' onClick={closeMobileMenu}>Sign In</Link>}
+            </li>
           </ul>
-          {button && <Button buttonStyle='btn--outline'>SIGN IN</Button>}
+          {user?.displayName ? button &&<Button buttonStyle='btn--outline' onClick ={handleSignOut}>Logout</Button>:button && <Button buttonStyle='btn--outline'>SIGN IN</Button>}
         </div>
       </nav>
     </>

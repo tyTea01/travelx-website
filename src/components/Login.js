@@ -12,8 +12,12 @@ import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
-
+import { GoogleButton } from 'react-google-button';
+import {UserAuth} from '../components/context/AuthContext';
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import SSNBox from '../components/pages/SSNBox';
+import { BrowserRouter as Router, Routes, Route, Outlet, Navigate } from 'react-router-dom';
 
 const theme = createTheme({
     palette: {
@@ -35,6 +39,23 @@ export default function Login() {
       password: data.get('password'),
     });
   };
+
+  const { googleSignIn, user } = UserAuth();
+  const navigate = useNavigate();
+
+  const handleGoogleSignIn = async () => {
+    try {
+      await googleSignIn();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(()=> {
+    if (user != null) {
+      navigate('/SSNBox');
+    }
+  }, []);
 
   return (
     <ThemeProvider theme={theme}>
@@ -96,6 +117,9 @@ export default function Login() {
             </Button>
             <Grid container>
               <Grid item xs>
+                <div classname= 'max-w-[240px] m-auto py-4'>
+                    <GoogleButton onClick={handleGoogleSignIn}/>
+                </div>
                 <Link href="#" variant="body2">
                   Forgot password?
                 </Link>
