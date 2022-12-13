@@ -230,7 +230,7 @@ function AddPerson() {
 	};
 	
 	const photoError = (photo.length == 0); // temporary 
-	
+	const ssnBtnErr = false;
 	const handleChange = (event) => {
 		setValues({
 			...values,
@@ -248,7 +248,10 @@ function AddPerson() {
 
       <div className='data-submit'>
         <header>
-		
+		<br></br>
+		<br></br>
+		<br></br>
+		<br></br>
 		<div className="department-dropdown">
 		
 			<FormControl margin="normal" fullWidth sx={{ m: 1, minWidth: 120}}>
@@ -310,9 +313,9 @@ function AddPerson() {
 				<Button 
 					onClick={() => {
 						var data;
-						var parsedSsn; 
-						if (values.ssnmask){
-							parsedSsn = values.ssnmask.replace(/\-/g, "");
+						var parsedSsn = values.ssnmask.replace(/\-/g, "");
+						if (getIn(parsedSsn)){
+							
 							data = getIn(parsedSsn);
 							// now begin adding data to form (autofill)
 							setValues({
@@ -326,6 +329,8 @@ function AddPerson() {
 						}else{
 							// display error message saying data couldn't be found
 							// Like "No existing SSN found in the database"
+							alert("No matching info found in database.")
+							//ssnBtnErr = true;
 						}
 					}}
 					type="submit" 
@@ -333,6 +338,7 @@ function AddPerson() {
 					endIcon={<KeyboardArrowRightIcon/>}
 					disabled={ssnError}
 					sx={{margin: "0px auto", display: "flex"}}
+					//helperText={ssnBtnErr ? "Please enter the full 9-digit SSN." : ""}
 					>
 					Search SSN
 				</Button>
@@ -463,7 +469,19 @@ function AddPerson() {
 		            <Button 
            onClick={() => {
 			// success function: add
-			
+			var obj = {};
+			obj[values.ssnmask] = {};
+			var incomingData;
+			if (department==1) {
+				incomingData = { }
+				Object.assign(obj[values.ssnmask], {fullName: values.namemask, driversLicense: values.licensemask, dateOfBirth: values.dobmask, passportNumber: values.passportmask, passportExpiration: values.expmask} )
+			} else if (department==2) {
+				Object.assign(obj[values.ssnmask], {fullName: values.namemask, driversLicense: values.licensemask, dateOfBirth: values.dobmask, passportNumber: values.passportmask, passportExpiration: values.expmask} )
+			} else if (department==3) {
+				Object.assign(obj[values.ssnmask], {fullName: values.namemask, driversLicense: values.licensemask, dateOfBirth: values.dobmask, passportNumber: values.passportmask, passportExpiration: values.expmask} )
+			} else {
+			}
+			console.log(obj[values.ssnmask])
           }}
           type="submit" 
           variant="contained" 

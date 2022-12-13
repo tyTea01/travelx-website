@@ -1,5 +1,6 @@
 .data-submit {
 	padding: 50px 0px 50px 0px;
+
 }
 
 .ss-data-field, .dos-data-field, .dmv-data-field {
@@ -53,6 +54,7 @@ img.picturePreview {
 
 .department-dropdown {
 	margin: auto;
+	margin-bottom: 150px;
     max-width: -moz-fit-content;
     max-width: fit-content;
 }

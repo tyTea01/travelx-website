@@ -26,8 +26,6 @@ function Footer() {
             <div className='footer-link-wrappers'>
                 <div className='footer-link-items'>
                     <h2>About</h2>
-                    <Link to='/sign-in'>How it works</Link>
-                    <Link to='/'>Testimonials</Link>
                     <Link to='/'>Careers</Link>
                     <Link to='/'>Terms of Service</Link>
                 </div>
@@ -45,35 +43,19 @@ function Footer() {
             <div className='footer-link-wrappers'>
                 <div className='footer-link-items'>
                     <h2>Policy</h2>
-                    <Link to='/'>Accessibility</Link>
-                    <Link to='/'>Accountability</Link>
-                    <Link to='/'>Privacy</Link>
-                    <Link to='/'>FOIA</Link>
-                    <Link to='/'>Site Policies</Link>
+                    <a href='https://www.cbp.gov/site-policy-notices/accessibility'>Accessibility</a>
+                    <a href='https://www.cbp.gov/newsroom/publications/performance-accountability-financial'>Accountability</a>
+                    <a href='https://www.cbp.gov/site-policy-notices/privacy-policy'>Privacy</a>
+                    <a href='https://www.cbp.gov/site-policy-notices/foia'>FOIA</a>
+                    <a href='https://www.cbp.gov/site-policy-notices'>Site Policies</a>
                 </div>
 
                 <div className='footer-link-items'>
                     <h2>Government</h2>
-                    <Link to='/'>The White House</Link>
-                    <Link to='/'>USA</Link>
+                    <a href='https://www.whitehouse.gov/'>The White House</a>
+                    <a href='https://www.usa.gov/'>USA.gov</a>
                 </div>
             </div>
-
-            {/* <div className="footer-link-wrappers">
-            <iframe 
-            src="https://www.dhs.gov/ntas/" 
-            name="National Terrorism Advisory System" 
-            title="National Terrorism Advisory System" 
-            width="170" 
-            height="180" 
-            scrolling="no" 
-            frameborder="0" 
-            seamless border="0"
-          
-            >
-
-            </iframe>
-            </div> */}
 
         </div>
         <section className="social-media">
@@ -83,55 +65,55 @@ function Footer() {
                         travelX <i className="fas fa-plane-departure" />
                     </Link>
                 </div>
-                <small className="website-rights">travelX © 2022</small>
+                <small className="website-rights">Team Dino © 2022</small>
                 <div className="social-icons">
-                    <Link className="social-icon-link facebook"
-                    to="/"
+                    <a className="social-icon-link facebook"
+                    href="https://www.facebook.com/CBPgov"
                     target="_blank"
                     aria-label='Facebook'
                     >
                         <i className="fab fa-facebook-f"></i>
-                    </Link>
+                    </a>
 
-                    <Link className="social-icon-link instagram"
-                    to="/"
+                    <a className="social-icon-link instagram"
+                    href="https://www.instagram.com/cbpgov/"
                     target="_blank"
                     aria-label='Instagram'
                     >
                         <i className="fab fa-instagram"></i>
-                    </Link>
+                    </a>
 
-                    <Link className="social-icon-link twitter"
-                    to="/"
+                    <a className="social-icon-link twitter"
+                    href="https://twitter.com/cbp"
                     target="_blank"
                     aria-label='Twitter'
                     >
                         <i className="fab fa-twitter"></i>
-                    </Link>
+                    </a>
 
-                    <Link className="social-icon-link youtube"
-                    to="/"
+                    <a className="social-icon-link youtube"
+                    href="https://www.youtube.com/channel/UCVRj-aUsXBrlM8elk3zmLvw"
                     target="_blank"
                     aria-label='Youtube'
                     >
                         <i className="fab fa-youtube"></i>
-                    </Link>
+                    </a>
 
-                    <Link className="social-icon-link LinkedIn"
-                    to="/"
+                    <a className="social-icon-link LinkedIn"
+                    href="https://www.linkedin.com/company/customs-and-border-protection/?trk=tyah"
                     target="_blank"
                     aria-label='LinkedIn'
                     >
                         <i className="fab fa-linkedin"></i>
-                    </Link>
+                    </a>
 
-                    <Link className="social-icon-link flickr"
-                    to="/"
+                    <a className="social-icon-link flickr"
+                    href="https://www.flickr.com/photos/cbpphotos/"
                     target="_blank"
                     aria-label='Flickr'
                     >
                         <i className="fab fa-flickr"></i>
-                    </Link>
+                    </a>
                     
 
                 </div>

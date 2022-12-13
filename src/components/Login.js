@@ -115,12 +115,21 @@ export default function Login() {
             >
               Sign In
             </Button>
-            <Grid container>
+            <Grid 
+            container spacing={0}
+            direction="column"
+            alignItems="center"
+            justifyContent="center"
+            style={{ minHeight: '60vh' }}
+            >
               <Grid item xs>
-                <div classname= 'max-w-[240px] m-auto py-4'>
-                    <GoogleButton onClick={handleGoogleSignIn}/>
+                <div classname= 'google-button'>
+                    <GoogleButton  onClick={handleGoogleSignIn}/>
                 </div>
-                <Link href="#" variant="body2">
+                <Link 
+                style={{display: 'flex',  justifyContent:'center'}}
+                href="#" 
+                variant="body2">
                   Forgot password?
                 </Link>
               </Grid>
